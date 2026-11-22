@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <TSA_PrivatePrisonCell_Label>Private cell</TSA_PrivatePrisonCell_Label>
+  <TSA_PrivatePrisonCell_InspectOk>Has Private Cell, Prison Break Interval: {0}</TSA_PrivatePrisonCell_InspectOk>
+  <TSA_PrivatePrisonCell_InspectDays>{0} days</TSA_PrivatePrisonCell_InspectDays>
+
+  <TSA_PrisonBreak_Base>Base: {0} days</TSA_PrisonBreak_Base>
+  <TSA_PrisonBreak_Result>Result: {0} days</TSA_PrisonBreak_Result>
+  <TSA_PrisonBreak_WouldBe>Would be: {0} days</TSA_PrisonBreak_WouldBe>
+  <TSA_PrisonBreak_DoorCount>{0} doors</TSA_PrisonBreak_DoorCount>
+
+  <TSA_PrisonBreak_NeverHeader>Never</TSA_PrisonBreak_NeverHeader>
+  <TSA_PrisonBreak_NeverAsleep>asleep</TSA_PrisonBreak_NeverAsleep>
+  <TSA_PrisonBreak_NeverDowned>downed</TSA_PrisonBreak_NeverDowned>
+  <TSA_PrisonBreak_NeverAlreadyBreaking>already prison-breaking</TSA_PrisonBreak_NeverAlreadyBreaking>
+  <TSA_PrisonBreak_NeverGene>blocked by gene</TSA_PrisonBreak_NeverGene>
+  <TSA_PrisonBreak_NeverCannot>cannot participate</TSA_PrisonBreak_NeverCannot>
+  <TSA_PrisonBreak_NeverNotPrison>not in a prison</TSA_PrisonBreak_NeverNotPrison>
+  <TSA_PrisonBreak_FactorRecentBreak>Recent prison break</TSA_PrisonBreak_FactorRecentBreak>
+</LanguageData>

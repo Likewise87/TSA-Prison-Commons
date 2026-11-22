@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>TSA Prison Commons</name>
+	<packageId>TSA.PrisonCommons</packageId>
+	<author>TSA (fork of Ben Lubar / Mlie)</author>
+	<url>https://github.com/Likewise87/TSA-Prison-Commons</url>
+	<supportedVersions>
+		<li>1.7</li>
+	</supportedVersions>
+	<modDependencies>
+		<li>
+			<packageId>brrainz.harmony</packageId>
+			<displayName>Harmony</displayName>
+			<steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+			<downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
+		</li>
+		<li>
+			<packageId>ReGrowth.BOTR.Core</packageId>
+			<displayName>ReGrowth 2</displayName>
+			<steamWorkshopUrl>steam://url/CommunityFilePage/2260097569</steamWorkshopUrl>
+			<downloadUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2260097569</downloadUrl>
+		</li>
+	</modDependencies>
+	<loadAfter>
+		<li>brrainz.harmony</li>
+		<li>ReGrowth.BOTR.Core</li>
+		<li>ReBuild.COTR.DoorsAndCorners</li>
+		<li>Resurrectionem.Furniture</li>
+	</loadAfter>
+	<incompatibleWith>
+		<li>Mlie.PrisonCommons</li>
+	</incompatibleWith>
+	<description>RimWorld 1.7 fork of Prison Commons (Continued) by Ben Lubar / Mlie (MIT). GitHub release only — not on Steam Workshop.
+
+Requires ReGrowth 2 (Core).
+
+Private cells: owned bed rooms with at most two prisoner sleeping slots get a longer prison-break interval (x2.5). Keep the bed room separate from the commons (ReBuild cell doors work well for this). Cell bars seal rooms for prison logic but still equalize temperature (and gas) with the commons; cell doors seep heat faster when closed. Beauty/space/wealth/cleanliness for a private cell can inherit from a directly adjacent commons (through a cell door or bars) so impressiveness is not stuck on a tiny alcove.
+
+Commons: mark tables / gather spots / sculptures as Prison Commons. Colony prisoners may always pass ReBuild/VFE cell doors. During the day, idle prisoners prefer hanging out in the commons and may play recreation buildings there (chess, poker, etc.) for a short mood thought — no recreation need. Hungry prisoners will walk to commons food when it is available there. Recruit resistance reduction from mood tops out at 1.8× at 100% mood (vanilla 1.5×).
+
+Bathrooms: mark DBH fixtures as Prison Commons (access). Prisoners may enter to use them, then leave afterward.
+
+Do not run alongside Workshop Mlie.PrisonCommons.</description>
+	<modVersion IgnoreIfNoMatchingField="True">1.7.1</modVersion>
+</ModMetaData>

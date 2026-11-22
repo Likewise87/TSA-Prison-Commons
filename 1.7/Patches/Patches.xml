@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- Anything that already has CompGatherSpot also gets Prison Commons. -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/ThingDef/comps/li[compClass="CompGatherSpot"]</xpath>
+    <value>
+      <li>
+        <compClass>CompGatherSpot</compClass>
+      </li>
+      <li>
+        <compClass>CompPrisonCommons</compClass>
+      </li>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>/Defs/ThingDef[defName="PartySpot"][not(comps)]</xpath>
+    <value>
+      <comps />
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/ThingDef[defName="PartySpot"]/comps</xpath>
+    <value>
+      <li>
+        <compClass>CompPrisonCommons</compClass>
+      </li>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/ThingDef[@Name="SculptureBase"]/comps</xpath>
+    <value>
+      <li>
+        <compClass>CompPrisonCommons</compClass>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- Dining / eat-surface tables (vanilla + modded) count as linger markers. -->
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>/Defs/ThingDef[surfaceType="Eat"][not(comps)]</xpath>
+    <value>
+      <comps />
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/ThingDef[surfaceType="Eat" and not(comps/li[compClass="CompPrisonCommons"])]/comps</xpath>
+    <value>
+      <li>
+        <compClass>CompPrisonCommons</compClass>
+      </li>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Dubs Bad Hygiene</li>
+      <li>Dubs Bad Hygiene Lite</li>
+    </mods>
+    <match Class="PatchOperationAdd">
+      <xpath>/Defs/ThingDef[@Name="BasedFixture"]/comps</xpath>
+      <value>
+        <li>
+          <compClass>CompPrisonCommons</compClass>
+        </li>
+      </value>
+    </match>
+  </Operation>
+
+  <!-- RR Furniture tables/desks are covered by CompGatherSpot + surfaceType=Eat patches above;
+       a dedicated FindMod Add failed once those already injected CompPrisonCommons. -->
+
+  <!-- Cell doors already seal rooms; speed closed-door heat seep toward vent-like (bars are handled in C#). -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>ReBuild: Doors and Corners</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[defName="RB_CellDoor"]/building</xpath>
+          <value>
+            <doorTempEqualizeRate>10</doorTempEqualizeRate>
+            <doorTempEqualizeIntervalClosed>60</doorTempEqualizeIntervalClosed>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Vanilla Furniture Expanded - Architect</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationAdd">
+          <success>Always</success>
+          <xpath>/Defs/ThingDef[defName="VFEArch_CellDoor"]/building</xpath>
+          <value>
+            <doorTempEqualizeRate>10</doorTempEqualizeRate>
+            <doorTempEqualizeIntervalClosed>60</doorTempEqualizeIntervalClosed>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+</Patch>

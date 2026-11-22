@@ -1,0 +1,9 @@
+bin/
+obj/
+.vs/
+*.user
+*.suo
+*.pdb
+_tmp_*/
+Source/obj/
+Source/bin/

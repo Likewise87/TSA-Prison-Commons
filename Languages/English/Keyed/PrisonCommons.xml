@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <CommandPrisonCommonsToggleLabel>Prison Commons</CommandPrisonCommonsToggleLabel>
+  <CommandPrisonCommonsToggleDescActive>Prisoners can freely enter this room if it shares a door with their cell or another prison commons they can access. They may hang out here.</CommandPrisonCommonsToggleDescActive>
+  <CommandPrisonCommonsToggleDescInactive>This is a normal gather spot.</CommandPrisonCommonsToggleDescInactive>
+
+  <CommandPrisonCommonsToggleLabelAccessOnly>Prison Commons (access)</CommandPrisonCommonsToggleLabelAccessOnly>
+  <CommandPrisonCommonsToggleDescActiveAccessOnly>Prisoners may enter this room through shared doors to use fixtures (e.g. toilets), but it is not a hangout — they will not treat it as a prison commons lounge.</CommandPrisonCommonsToggleDescActiveAccessOnly>
+  <CommandPrisonCommonsToggleDescInactiveAccessOnly>Prisoners cannot use this fixture room as prison commons access.</CommandPrisonCommonsToggleDescInactiveAccessOnly>
+
+  <PrisonCommons_Settings_EnableLogging>Enable debug logging</PrisonCommons_Settings_EnableLogging>
+  <PrisonCommons_Settings_EnableLoggingTip>Writes hangout/vacate/recreation decisions to Player.log (HANGOUT, HANGOUT_FAIL, VACATE, RECREATE). Turn off when done.</PrisonCommons_Settings_EnableLoggingTip>
+</LanguageData>

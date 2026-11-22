@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<!-- RimWorld 1.7 / Waylith runs net10.0. -->
+		<TargetFramework>net10.0</TargetFramework>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<LangVersion>latest</LangVersion>
+		<Nullable>enable</Nullable>
+		<OutputPath>..\1.7\Assemblies\</OutputPath>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<Optimize>true</Optimize>
+		<DebugType>portable</DebugType>
+		<GenerateDependencyFile>false</GenerateDependencyFile>
+		<AssemblyName>TSA_PrisonCommons</AssemblyName>
+		<RootNamespace>PrisonCommons</RootNamespace>
+		<RimWorldDir>C:\Steam\steamapps\common\RimWorld</RimWorldDir>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="Lib.Harmony" Version="3.0.0-rc.2">
+			<ExcludeAssets>runtime</ExcludeAssets>
+			<PrivateAssets>all</PrivateAssets>
+		</PackageReference>
+		<Reference Include="Assembly-CSharp">
+			<HintPath>$(RimWorldDir)\Assembly-CSharp.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="UnityStubs">
+			<HintPath>$(RimWorldDir)\UnityStubs.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Waylith">
+			<HintPath>$(RimWorldDir)\Waylith.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+	</ItemGroup>
+</Project>
