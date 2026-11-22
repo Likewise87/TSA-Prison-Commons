@@ -11,6 +11,9 @@ public class CompPrisonCommons : ThingComp
 
 	private bool isPrisonCommons;
 
+	/// <summary>True when the For prisoners / Prison Commons toggle is on (scribed).</summary>
+	public bool MarkedForPrisoners => isPrisonCommons;
+
 	private bool Active
 	{
 		get => isPrisonCommons;

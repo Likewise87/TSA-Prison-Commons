@@ -16,22 +16,11 @@ internal static class SocialProperness_IsSociallyProper
 		var interactionSpot = t.def.hasInteractionCell ? t.InteractionCell : t.Position;
 		var interactionRoom = interactionSpot.GetRoomOrAdjacent(t.Map);
 
-		// Colonists: never use prisoner-marked joy buildings or linger-commons recreation.
+		// Colonists: never use For-prisoners joy, or any joy in an active linger commons.
 		if (!forPrisoner)
 		{
-			if (PrisonCommons.IsPrisonerOnlyJoyBuilding(t))
-			{
+			if (PrisonCommons.ColonistBlockedFromJoyOn(t))
 				__result = false;
-				return;
-			}
-
-			if (interactionRoom != null && PrisonCommons.IsLingerCommons(interactionRoom) &&
-			    PrisonCommons.IsJoyBuilding(t.def))
-			{
-				__result = false;
-				return;
-			}
-
 			return;
 		}
 

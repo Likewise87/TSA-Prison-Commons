@@ -108,13 +108,32 @@ public static class PrisonCommons
 		return def.StatBaseDefined(StatDefOf.JoyGainFactor);
 	}
 
-	/// <summary>Active Prison Commons on this building → prisoners may use; colonists may not.</summary>
+	/// <summary>Toggle is on (do not rely on comps HashSet — use the scribed flag).</summary>
+	internal static bool IsMarkedForPrisoners(Thing? t)
+	{
+		var comp = t?.TryGetComp<CompPrisonCommons>();
+		return comp is { MarkedForPrisoners: true };
+	}
+
+	/// <summary>Active For-prisoners joy / recreation building — colonists must not use.</summary>
 	internal static bool IsPrisonerOnlyJoyBuilding(Thing? t)
 	{
-		if (t == null || !IsJoyBuilding(t.def))
+		if (t == null || !IsMarkedForPrisoners(t))
 			return false;
-		var comp = t.TryGetComp<CompPrisonCommons>();
-		return comp != null && comps.Contains(comp);
+		return IsJoyBuilding(t.def);
+	}
+
+	/// <summary>Colonists must not take joy jobs on this thing.</summary>
+	internal static bool ColonistBlockedFromJoyOn(Thing? t)
+	{
+		if (t == null)
+			return false;
+		if (IsPrisonerOnlyJoyBuilding(t))
+			return true;
+		if (!IsJoyBuilding(t.def))
+			return false;
+		Room? room = t.GetRoom();
+		return room != null && IsLingerCommons(room);
 	}
 
 	internal static bool IsHygieneAccessMarker(CompPrisonCommons comp)
