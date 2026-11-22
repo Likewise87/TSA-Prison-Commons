@@ -59,18 +59,33 @@ public class CompPrisonCommons : ThingComp
 
 	public override IEnumerable<Gizmo> CompGetGizmosExtra()
 	{
-		string activeDesc = IsAccessOnlyMarker
-			? "CommandPrisonCommonsToggleDescActiveAccessOnly".Translate()
-			: "CommandPrisonCommonsToggleDescActive".Translate();
-		string inactiveDesc = IsAccessOnlyMarker
-			? "CommandPrisonCommonsToggleDescInactiveAccessOnly".Translate()
-			: "CommandPrisonCommonsToggleDescInactive".Translate();
+		bool joyBuilding = PrisonCommons.PrisonCommons.IsJoyBuilding(parent.def);
+
+		string label;
+		string activeDesc;
+		string inactiveDesc;
+		if (IsAccessOnlyMarker)
+		{
+			label = "CommandPrisonCommonsToggleLabelAccessOnly".Translate();
+			activeDesc = "CommandPrisonCommonsToggleDescActiveAccessOnly".Translate();
+			inactiveDesc = "CommandPrisonCommonsToggleDescInactiveAccessOnly".Translate();
+		}
+		else if (joyBuilding)
+		{
+			label = "CommandPrisonCommonsToggleLabelJoy".Translate();
+			activeDesc = "CommandPrisonCommonsToggleDescActiveJoy".Translate();
+			inactiveDesc = "CommandPrisonCommonsToggleDescInactiveJoy".Translate();
+		}
+		else
+		{
+			label = "CommandPrisonCommonsToggleLabel".Translate();
+			activeDesc = "CommandPrisonCommonsToggleDescActive".Translate();
+			inactiveDesc = "CommandPrisonCommonsToggleDescInactive".Translate();
+		}
 
 		var commandToggle = new Command_Toggle
 		{
-			defaultLabel = IsAccessOnlyMarker
-				? "CommandPrisonCommonsToggleLabelAccessOnly".Translate()
-				: "CommandPrisonCommonsToggleLabel".Translate(),
+			defaultLabel = label,
 			icon = forPrisonersTex,
 			isActive = () => Active,
 			toggleAction = delegate { Active = !Active; },

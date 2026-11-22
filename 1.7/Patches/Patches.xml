@@ -73,6 +73,23 @@
   <!-- RR Furniture tables/desks are covered by CompGatherSpot + surfaceType=Eat patches above;
        a dedicated FindMod Add failed once those already injected CompPrisonCommons. -->
 
+  <!-- Joy buildings (chess, TV, billiards, …): Prison Commons toggle = prisoners only. -->
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>/Defs/ThingDef[thingCategories/li="BuildingsJoy"][not(comps)]</xpath>
+    <value>
+      <comps />
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/ThingDef[thingCategories/li="BuildingsJoy" and not(comps/li[compClass="CompPrisonCommons"])]/comps</xpath>
+    <value>
+      <li>
+        <compClass>CompPrisonCommons</compClass>
+      </li>
+    </value>
+  </Operation>
+
   <!-- Cell doors already seal rooms; speed closed-door heat seep toward vent-like (bars are handled in C#). -->
   <Operation Class="PatchOperationFindMod">
     <mods>

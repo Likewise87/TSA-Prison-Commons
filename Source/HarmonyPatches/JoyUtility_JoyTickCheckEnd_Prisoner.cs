@@ -46,7 +46,7 @@ internal static class JoyUtility_JoyTickCheckEnd_Prisoner
 
 		if (elapsed >= duration)
 		{
-			PrisonerRecreation.NotifyPlayFinished(pawn);
+			PrisonerRecreation.NotifyPlayFinished(pawn, curJob.def.joyKind);
 			pawn.jobs?.curDriver?.EndJobWith(JobCondition.Succeeded);
 			__result = true;
 			return false;
@@ -68,8 +68,9 @@ internal static class JoyUtility_TryGainRecRoomThought_Prisoner
 	{
 		if (pawn is not { IsPrisoner: true })
 			return;
-		if (pawn.CurJob?.def?.joyKind == null)
+		JoyKindDef? kind = pawn.CurJob?.def?.joyKind;
+		if (kind == null)
 			return;
-		PrisonerRecreation.NotifyPlayFinished(pawn);
+		PrisonerRecreation.NotifyPlayFinished(pawn, kind);
 	}
 }

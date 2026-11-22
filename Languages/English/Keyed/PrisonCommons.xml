@@ -8,6 +8,10 @@
   <CommandPrisonCommonsToggleDescActiveAccessOnly>Prisoners may enter this room through shared doors to use fixtures (e.g. toilets), but it is not a hangout — they will not treat it as a prison commons lounge.</CommandPrisonCommonsToggleDescActiveAccessOnly>
   <CommandPrisonCommonsToggleDescInactiveAccessOnly>Prisoners cannot use this fixture room as prison commons access.</CommandPrisonCommonsToggleDescInactiveAccessOnly>
 
+  <CommandPrisonCommonsToggleLabelJoy>For prisoners</CommandPrisonCommonsToggleLabelJoy>
+  <CommandPrisonCommonsToggleDescActiveJoy>Prisoners may use this recreation building. Colonists will not. Also marks the room as prison commons hangout.</CommandPrisonCommonsToggleDescActiveJoy>
+  <CommandPrisonCommonsToggleDescInactiveJoy>Normal recreation — colonists may use it (unless the room is already a prison commons). Prisoners will not treat this building as for them.</CommandPrisonCommonsToggleDescInactiveJoy>
+
   <PrisonCommons_Settings_EnableLogging>Enable debug logging</PrisonCommons_Settings_EnableLogging>
   <PrisonCommons_Settings_EnableLoggingTip>Writes hangout/vacate/recreation decisions to Player.log (HANGOUT, HANGOUT_FAIL, VACATE, RECREATE). Turn off when done.</PrisonCommons_Settings_EnableLoggingTip>
 </LanguageData>

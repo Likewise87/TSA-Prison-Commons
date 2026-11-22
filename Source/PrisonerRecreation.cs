@@ -11,10 +11,10 @@ namespace PrisonCommons;
 /// </summary>
 internal static class PrisonerRecreation
 {
-	/// <summary>While already in linger commons — main play window.</summary>
-	private const float TryPlayChanceInCommons = 0.55f;
+	/// <summary>While already in linger commons — prefer play over endless wander.</summary>
+	private const float TryPlayChanceInCommons = 0.85f;
 	/// <summary>While leaving cell toward hangout — can path straight to a game.</summary>
-	private const float TryPlayChanceEnRoute = 0.35f;
+	private const float TryPlayChanceEnRoute = 0.55f;
 
 	private static readonly List<JoyGiverDef> giverScratch = new();
 
@@ -61,7 +61,9 @@ internal static class PrisonerRecreation
 			if (target == null)
 				continue;
 			Room? room = target.GetRoom();
-			if (room == null || !PrisonCommons.IsLingerCommons(room))
+			bool inCommons = room != null && PrisonCommons.IsLingerCommons(room);
+			bool markedJoy = PrisonCommons.IsPrisonerOnlyJoyBuilding(target);
+			if (!inCommons && !markedJoy)
 				continue;
 			return job;
 		}
@@ -92,14 +94,28 @@ internal static class PrisonerRecreation
 		return PrisonCommons.ShouldPreferLingerCommons(pawn) && Rand.Chance(TryPlayChanceEnRoute);
 	}
 
-	public static void NotifyPlayFinished(Pawn pawn)
+	public static void NotifyPlayFinished(Pawn pawn, JoyKindDef? joyKind = null)
 	{
 		if (pawn?.needs?.mood?.thoughts?.memories == null)
 			return;
-		ThoughtDef? def = DefDatabase<ThoughtDef>.GetNamedSilentFail("PrisonCommons_Recreated");
+
+		ThoughtDef? def = ResolveThought(joyKind);
 		if (def == null)
 			return;
 		pawn.needs.mood.thoughts.memories.TryGainMemory(def);
-		PrisonCommonsLog.Decision(pawn, "RECREATE_DONE", "gained PrisonCommons_Recreated");
+		PrisonCommonsLog.Decision(pawn, "RECREATE_DONE",
+			$"gained {def.defName} (kind={joyKind?.defName ?? "generic"})");
+	}
+
+	private static ThoughtDef? ResolveThought(JoyKindDef? joyKind)
+	{
+		if (joyKind != null)
+		{
+			ThoughtDef? typed = DefDatabase<ThoughtDef>.GetNamedSilentFail(
+				"PrisonCommons_Recreated_" + joyKind.defName);
+			if (typed != null)
+				return typed;
+		}
+		return DefDatabase<ThoughtDef>.GetNamedSilentFail("PrisonCommons_Recreated");
 	}
 }

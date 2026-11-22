@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
+  <!-- Fallback if joy kind has no typed thought. -->
   <ThoughtDef>
     <defName>PrisonCommons_Recreated</defName>
     <durationDays>1</durationDays>
@@ -10,6 +11,77 @@
       <li>
         <label>prison recreation</label>
         <description>I got to play a bit. Helps pass the time.</description>
+        <baseMoodEffect>6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- One memory per recreation type so different games can stack. -->
+  <ThoughtDef>
+    <defName>PrisonCommons_Recreated_Gaming_Cerebral</defName>
+    <durationDays>1</durationDays>
+    <stackLimit>1</stackLimit>
+    <showBubble>true</showBubble>
+    <stages>
+      <li>
+        <label>prison games (thinking)</label>
+        <description>Chess or cards. Kept my mind busy.</description>
+        <baseMoodEffect>6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>PrisonCommons_Recreated_Gaming_Dexterity</defName>
+    <durationDays>1</durationDays>
+    <stackLimit>1</stackLimit>
+    <showBubble>true</showBubble>
+    <stages>
+      <li>
+        <label>prison games (dexterity)</label>
+        <description>Horseshoes or billiards. Felt good to move.</description>
+        <baseMoodEffect>6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>PrisonCommons_Recreated_Television</defName>
+    <durationDays>1</durationDays>
+    <stackLimit>1</stackLimit>
+    <showBubble>true</showBubble>
+    <stages>
+      <li>
+        <label>prison television</label>
+        <description>Watched some TV. Distracting.</description>
+        <baseMoodEffect>6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>PrisonCommons_Recreated_Telescope</defName>
+    <durationDays>1</durationDays>
+    <stackLimit>1</stackLimit>
+    <showBubble>true</showBubble>
+    <stages>
+      <li>
+        <label>prison telescope</label>
+        <description>Looked at the stars. Quiet for a while.</description>
+        <baseMoodEffect>6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>PrisonCommons_Recreated_HighCulture</defName>
+    <durationDays>1</durationDays>
+    <stackLimit>1</stackLimit>
+    <showBubble>true</showBubble>
+    <stages>
+      <li>
+        <label>prison music</label>
+        <description>Got to hear some music. Softened the day.</description>
         <baseMoodEffect>6</baseMoodEffect>
       </li>
     </stages>

@@ -86,7 +86,35 @@ public static class PrisonCommons
 			return true;
 		if (thing.def.IsTable)
 			return true;
+		// Chess / TV / billiards / etc. marked For prisoners = hangout + prison-only use.
+		if (IsJoyBuilding(thing.def))
+			return true;
 		return false;
+	}
+
+	internal static bool IsJoyBuilding(ThingDef? def)
+	{
+		if (def == null)
+			return false;
+		if (def.thingCategories != null)
+		{
+			for (int i = 0; i < def.thingCategories.Count; i++)
+			{
+				ThingCategoryDef? cat = def.thingCategories[i];
+				if (cat != null && cat.defName == "BuildingsJoy")
+					return true;
+			}
+		}
+		return def.StatBaseDefined(StatDefOf.JoyGainFactor);
+	}
+
+	/// <summary>Active Prison Commons on this building → prisoners may use; colonists may not.</summary>
+	internal static bool IsPrisonerOnlyJoyBuilding(Thing? t)
+	{
+		if (t == null || !IsJoyBuilding(t.def))
+			return false;
+		var comp = t.TryGetComp<CompPrisonCommons>();
+		return comp != null && comps.Contains(comp);
 	}
 
 	internal static bool IsHygieneAccessMarker(CompPrisonCommons comp)

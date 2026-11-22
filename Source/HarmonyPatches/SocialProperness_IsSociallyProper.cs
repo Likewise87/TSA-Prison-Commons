@@ -10,11 +10,32 @@ internal static class SocialProperness_IsSociallyProper
 {
 	public static void Postfix(ref bool __result, Thing t, Pawn p, bool forPrisoner)
 	{
-		if (!forPrisoner || p == null || t?.Map == null)
+		if (p == null || t?.Map == null)
 			return;
 
 		var interactionSpot = t.def.hasInteractionCell ? t.InteractionCell : t.Position;
 		var interactionRoom = interactionSpot.GetRoomOrAdjacent(t.Map);
+
+		// Colonists: never use prisoner-marked joy buildings or linger-commons recreation.
+		if (!forPrisoner)
+		{
+			if (PrisonCommons.IsPrisonerOnlyJoyBuilding(t))
+			{
+				__result = false;
+				return;
+			}
+
+			if (interactionRoom != null && PrisonCommons.IsLingerCommons(interactionRoom) &&
+			    PrisonCommons.IsJoyBuilding(t.def))
+			{
+				__result = false;
+				return;
+			}
+
+			return;
+		}
+
+		// --- Prisoner path ---
 		if (interactionRoom == null)
 			return;
 
@@ -27,6 +48,13 @@ internal static class SocialProperness_IsSociallyProper
 
 		if (__result)
 			return;
+
+		// Explicit For-prisoners joy building (chess etc.).
+		if (PrisonCommons.IsPrisonerOnlyJoyBuilding(t))
+		{
+			__result = true;
+			return;
+		}
 
 		// Linger commons / allowed doorways stay socially proper for prisoners.
 		if (PrisonCommons.IsLingerCommons(interactionRoom) ||
