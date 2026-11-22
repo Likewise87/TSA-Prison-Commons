@@ -1,7 +1,8 @@
 MIT License
 
-Copyright (c) 2020 Mlie
-Copyright (c) 2026 TSA (fork)
+Copyright (c) Ben Lubar (original Prison Commons)
+Copyright (c) Mlie / emipa606 (Prison Commons Continued)
+Copyright (c) 2026 TSA (this fork)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

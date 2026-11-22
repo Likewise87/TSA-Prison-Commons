@@ -2,7 +2,7 @@
 <ModMetaData>
 	<name>TSA Prison Commons</name>
 	<packageId>TSA.PrisonCommons</packageId>
-	<author>TSA (fork of Ben Lubar / Mlie)</author>
+	<author>TSA</author>
 	<url>https://github.com/Likewise87/TSA-Prison-Commons</url>
 	<supportedVersions>
 		<li>1.7</li>
@@ -30,16 +30,20 @@
 	<incompatibleWith>
 		<li>Mlie.PrisonCommons</li>
 	</incompatibleWith>
-	<description>RimWorld 1.7 fork of Prison Commons (Continued) by Ben Lubar / Mlie (MIT). GitHub release only — not on Steam Workshop.
+	<description>Fork of Prison Commons.
 
-Requires ReGrowth 2 (Core).
+Credits: Original mod by Ben Lubar. Continued/updated by Mlie (emipa606). This fork by TSA adds RimWorld 1.7 extras (private cells, commons hangout/recreation, recruiting, temperature through bars/doors, and more). MIT license — see LICENSE.md and CREDITS.md. GitHub only; not on Steam. Do not run with Mlie.PrisonCommons. Needs ReGrowth 2.
 
-Private cells: owned bed rooms with at most two prisoner sleeping slots get a longer prison-break interval (x2.5). Keep the bed room separate from the commons (ReBuild cell doors work well for this). Cell bars seal rooms for prison logic but still equalize temperature (and gas) with the commons; cell doors seep heat faster when closed. Beauty/space/wealth/cleanliness for a private cell can inherit from a directly adjacent commons (through a cell door or bars) so impressiveness is not stuck on a tiny alcove.
+What it does (simple):
 
-Commons: mark tables / gather spots / sculptures as Prison Commons. Colony prisoners may always pass ReBuild/VFE cell doors. During the day, idle prisoners prefer hanging out in the commons and may play recreation buildings there (chess, poker, etc.) for a short mood thought — no recreation need. Hungry prisoners will walk to commons food when it is available there. Recruit resistance reduction from mood tops out at 1.8× at 100% mood (vanilla 1.5×).
+Private cells + a shared commons
+- Give each prisoner a small private cell (bed room) and a nicer shared commons next door (tables, art, recreation). Mark commons furniture as Prison Commons.
+- Tiny cells borrow beauty, space, wealth, and cleanliness from the adjacent commons, so the cell still feels like part of a nice prison instead of a bare box.
+- Proper private cells (small, owned bed rooms next to commons) make prison breaks / riots much less likely.
+- A pretty prison (good mood from impressiveness and commons) makes recruiting faster.
+- Prisoners hang out in the commons by day and can use recreation (chess, poker, etc.) for a short mood boost. That helps mood — and mood helps recruiting.
+- Hungry prisoners can walk to food in the commons. Cell bars keep rooms separate for prison rules but still share temperature (and gas) with the commons.
 
-Bathrooms: mark DBH fixtures as Prison Commons (access). Prisoners may enter to use them, then leave afterward.
-
-Do not run alongside Workshop Mlie.PrisonCommons.</description>
-	<modVersion IgnoreIfNoMatchingField="True">1.7.1</modVersion>
+Requires Harmony + ReGrowth 2. Soft support for ReBuild cell doors, DBH bathrooms (mark as Prison Commons), and similar cell doors.</description>
+	<modVersion IgnoreIfNoMatchingField="True">1.7.2</modVersion>
 </ModMetaData>
