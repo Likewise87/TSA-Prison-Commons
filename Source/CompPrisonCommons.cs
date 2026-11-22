@@ -64,17 +64,18 @@ public class CompPrisonCommons : ThingComp
 		string label;
 		string activeDesc;
 		string inactiveDesc;
-		if (IsAccessOnlyMarker)
-		{
-			label = "CommandPrisonCommonsToggleLabelAccessOnly".Translate();
-			activeDesc = "CommandPrisonCommonsToggleDescActiveAccessOnly".Translate();
-			inactiveDesc = "CommandPrisonCommonsToggleDescInactiveAccessOnly".Translate();
-		}
-		else if (joyBuilding)
+		// Joy first — do not classify recreation as hygiene "access only".
+		if (joyBuilding)
 		{
 			label = "CommandPrisonCommonsToggleLabelJoy".Translate();
 			activeDesc = "CommandPrisonCommonsToggleDescActiveJoy".Translate();
 			inactiveDesc = "CommandPrisonCommonsToggleDescInactiveJoy".Translate();
+		}
+		else if (IsAccessOnlyMarker)
+		{
+			label = "CommandPrisonCommonsToggleLabelAccessOnly".Translate();
+			activeDesc = "CommandPrisonCommonsToggleDescActiveAccessOnly".Translate();
+			inactiveDesc = "CommandPrisonCommonsToggleDescInactiveAccessOnly".Translate();
 		}
 		else
 		{

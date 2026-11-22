@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <CommandPrisonCommonsToggleLabel>Zona Común de la Prisión</CommandPrisonCommonsToggleLabel>
-  <CommandPrisonCommonsToggleDescActive>Los prisioneros pueden entrar libremente en esta habitación si comparte una puerta con su celda o con otra zona común de la prisión a la que puedan acceder.</CommandPrisonCommonsToggleDescActive>
+  <CommandPrisonCommonsToggleDescActive>Los prisioneros pueden entrar libremente en esta habitación si comparte una puerta con su celda o con otra zona común de la prisión a la que puedan acceder. Pueden quedarse aquí.</CommandPrisonCommonsToggleDescActive>
   <CommandPrisonCommonsToggleDescInactive>Este es un punto de encuentro normal.</CommandPrisonCommonsToggleDescInactive>
+
+  <CommandPrisonCommonsToggleLabelAccessOnly>Zona común (acceso)</CommandPrisonCommonsToggleLabelAccessOnly>
+  <CommandPrisonCommonsToggleDescActiveAccessOnly>Los prisioneros pueden entrar para usar instalaciones (p. ej. baños), pero no es una zona de estar.</CommandPrisonCommonsToggleDescActiveAccessOnly>
+  <CommandPrisonCommonsToggleDescInactiveAccessOnly>Los prisioneros no pueden usar esta habitación como acceso de zona común.</CommandPrisonCommonsToggleDescInactiveAccessOnly>
+
+  <CommandPrisonCommonsToggleLabelJoy>Para prisioneros</CommandPrisonCommonsToggleLabelJoy>
+  <CommandPrisonCommonsToggleDescActiveJoy>Los prisioneros pueden usar este edificio de recreo. Los colonos no. También marca la habitación como zona común de prisión.</CommandPrisonCommonsToggleDescActiveJoy>
+  <CommandPrisonCommonsToggleDescInactiveJoy>Recreo normal — los colonos pueden usarlo (salvo que la habitación ya sea zona común). Los prisioneros no lo tratan como para ellos.</CommandPrisonCommonsToggleDescInactiveJoy>
 </LanguageData>
