@@ -8,7 +8,7 @@ This TSA fork keeps the MIT license and adds RimWorld **1.7** behaviour (private
 
 ## What it does (simple)
 
-1. **Commons + tiny cells** — Prisoners sleep in small private cells and share a nicer commons (tables, art, recreation). Mark commons stuff as *Prison Commons*.
+1. **Commons + tiny cells** — Prisoners sleep in small private cells and share a nicer commons (tables, art, recreation). Mark commons stuff as *Prison Commons*. Separate cells from commons with **ReBuild cell doors / cell walls**.
 2. **Pretty cells without huge rooms** — Tiny cells **borrow beauty, space, wealth, and cleanliness** from the adjacent commons, so impressiveness isn’t stuck on a bare alcove.
 3. **Fewer riots / breaks** — Proper private cells (small owned bed rooms next to the commons) **cut prison-break chance** a lot (about 2.5× longer between breaks).
 4. **Faster recruiting** — A nicer prison and better prisoner mood **speed up recruiting** (mood can push resistance reduction higher than vanilla).
@@ -18,13 +18,13 @@ This TSA fork keeps the MIT license and adds RimWorld **1.7** behaviour (private
 ## Requirements
 
 - [Harmony](https://steamcommunity.com/sharedfiles/filedetails/?id=2009463077)
-- [ReGrowth 2](https://steamcommunity.com/sharedfiles/filedetails/?id=2260097569) (required)
+- [ReBuild: Doors and Corners](https://steamcommunity.com/sharedfiles/filedetails/?id=3262718980) (**required** — cell doors / cell walls for private cells)
 
-Optional: ReBuild Doors and Corners, Dubs Bad Hygiene, Resurrectionem / VFE cell doors.
+Optional soft support: Dubs Bad Hygiene, Resurrectionem / VFE cell doors.
 
 ## Install
 
-Clone or copy into RimWorld `Mods`, enable **after** Harmony and ReGrowth 2.
+Clone or copy into RimWorld `Mods`, enable **after** Harmony and ReBuild: Doors and Corners.
 
 ## Build
 
